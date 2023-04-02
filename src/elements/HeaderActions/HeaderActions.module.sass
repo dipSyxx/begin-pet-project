@@ -1,0 +1,37 @@
+.header_actions
+  display: flex
+  flex-direction: row
+  align-items: center
+  gap: 25px
+
+.header_toggle
+  margin-right: 45px
+
+.toggle
+  position: relative
+  width: 48px
+  height: 25px
+  background-color: #CDCDCD
+  border-radius: 20px
+  cursor: pointer
+
+.toggle_button
+  transition: all 0.3s ease
+  position: absolute
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  top: 1px
+  left: 1px
+  border-radius: 50%
+  background-color: #232427
+  width: 23px
+  height: 23px
+  & i
+    transform: rotate(-20deg)
+    color: #1EE1B3
+    font-size: 14px
+
+.toggle_button_active
+  left: 23px

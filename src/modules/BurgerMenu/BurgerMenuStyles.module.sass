@@ -1,0 +1,91 @@
+.burger_holder
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  background-color: #00000080
+  transition: all 0.5s ease
+  z-index: 100
+  opacity: 0
+  visibility: hidden
+
+.show_burger
+  opacity: 1
+  visibility: visible
+
+.burger_window
+  display: flex
+  flex-direction: column
+  background-color: #141418
+  width: 100%
+  max-width: 320px
+  max-height: 100%
+  height: 100%
+  position: fixed
+  top: 0
+  pointer-events: auto
+  z-index: 1000
+  overflow-y: auto
+  box-shadow: 2px 0 6px #33333342
+  transition: all 1s ease
+  visibility: hidden
+  left: -50%
+
+.burger_window_show
+  visibility: visible
+  left: 0 !important
+
+.close_button
+  display: flex
+  flex-direction: row
+  justify-content: flex-end
+  padding: 10px
+  padding-right: 10px
+  &
+.close_button i
+  font-size: 20px
+
+.burger_title
+  font-size: 28px
+  font-weight: 400
+  font-family: Metrophobic, sans-serif
+  padding-top: 40px
+  padding-bottom: 50px
+  text-align: center
+
+.nav_menu
+  padding: 0 25px
+
+.menu_links
+  display: flex
+  flex-direction: column
+  gap: 50px
+  font-size: 25px
+
+.link_item a
+  position: relative
+  display: flex
+  align-items: center
+  transition: all 0.2s ease
+  color: #fff
+  &::after
+    position: absolute
+    content: ""
+    width: 100%
+    height: 2px
+    bottom: -5px
+    left: -100%
+    background-color: #1EE1B3
+    transition: all 0.3s ease 0s
+    opacity: 0
+  &:hover::after
+    left: 0%
+    opacity: 1
+  &:hover
+    color: #1EE1B3
+
+@media( max-width: 665px  )
+  .burger_window
+    max-width: none
+    left: -100%

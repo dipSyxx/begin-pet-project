@@ -1,0 +1,56 @@
+//!variant
+.whiteButton
+  color: #08080C
+  background-color: #fff
+  padding: 18px 40px
+  font-weight: 700
+  &:hover
+    background-color: #1EE1B3
+
+.whiteButtonWithBlack
+  color: #08080C
+  background-color: #fff
+  padding: 18px 40px
+  font-weight: 700
+  & i
+    color: #1EE1B3
+    font-size: 18px
+    transition: all 0.3s ease
+    padding-left: 10px
+  &:hover i
+    transform: translate(10px, 0)
+  &:hover
+    background-color: #08080C
+    color: #fff
+
+.withoutBg
+  color: #fff
+  background: none
+  font-family: Metrophobic, sans-serif
+  &:hover
+    color: #1EE1B3
+
+.signUp
+  background-color: #1EE1B3
+  color: #08080C
+  padding: 11px 23px
+  font-family: Nunito, sans-serif
+  font-weight: 700
+  &:hover
+    background-color: #1EB2E1
+    color: #fff
+
+//! classNameStyles ===============================|
+.button
+  flex-shrink: 0
+  border: none
+  cursor: pointer
+  border-radius: 3px
+  box-sizing: border-box
+  display: flex
+  flex-direction: row
+  align-items: center
+  margin: 0
+  outline: none
+  position: relative
+  transition: all 0.3s ease
