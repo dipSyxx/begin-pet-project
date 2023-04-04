@@ -6,7 +6,7 @@ import styles from './typographyStyles.module.sass'
 type TypographyProps = {
   children: ReactNode
   component?: ElementType
-  variant?: 'h1' | 'h2' | 'h3' | 'subtitle1' | 'subtitle2'
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'subtitle1' | 'subtitle2'
   marginBottom?: 'mb-36' | 'mb-24' | 'mb-16' | 'mb-12' | 'mb-8' | 'mb-4'
   colorVariant?: 'green' | 'gray' | 'lightGray'
 }

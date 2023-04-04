@@ -11,6 +11,37 @@
   background: url("/intro/intro.png") center no-repeat
   background-size: cover
 
+.begin_block
+  display: none
+
+.begin_container
+  width: 100%
+  max-width: 700px
+  padding: 0 50px
+  margin: 0 auto
+
+.begin_inner
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-end
+  text-align: end
+
+.begin_title
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  padding-bottom: 20px
+
+.title_begin
+  font-size: 150px
+  font-weight: 700
+  margin-right: -14px
+  padding-bottom: 20px
+
+.begin_text
+  font-weight: 400
+
 .BEGIN
   position: absolute
   color: #252528
@@ -36,3 +67,11 @@
   transition: all 0.3s ease
   &:hover
     transform: scale(1.3)
+
+@media   ( max-width: 850px )
+  .begin_block
+    display: block
+
+@media   ( max-width: 600px )
+  .title_begin
+    font-size: 90px
