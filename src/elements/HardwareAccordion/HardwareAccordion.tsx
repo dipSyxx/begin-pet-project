@@ -4,7 +4,14 @@ import React, { ReactNode, useState } from 'react'
 
 import styles from './HadwareAccordion.module.sass'
 
-export const CustomAccordion = () => {
+type CustomAccordionProps = {
+  title: string
+  title_text: string
+  text: string
+  icon: string
+}
+
+export const CustomAccordion = ({ title, title_text, text, icon }: CustomAccordionProps) => {
   const [openAccordion, setOpenAccordion] = useState(false)
 
   const toggleHendler = () => {
@@ -16,11 +23,11 @@ export const CustomAccordion = () => {
       <div className={styles.hardwareAccordion_heading}>
         {openAccordion ? (
           <Typography component="h3" variant="h3" colorVariant="lightGray">
-            HARDWARE
+            {title}
           </Typography>
         ) : (
           <Typography component="h3" variant="h3" colorVariant="gray">
-            HARDWARE
+            {title}
           </Typography>
         )}
 
@@ -35,15 +42,11 @@ export const CustomAccordion = () => {
         <div className={styles.content_container}>
           <div className={styles.content_title}>
             <div className={styles.title_icon}>
-              <i className="fa-solid fa-microchip" />
+              <i className={`fa-solid ${icon}`} />
             </div>
-            <div className={styles.title_text}>Lorem</div>
+            <div className={styles.title_text}>{title_text}</div>
           </div>
-          <div className={styles.content_text}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus optio deserunt totam eos. Dolore aliquam
-            distinctio, omnis qui possimus vero? Quia quas ipsam aperiam tenetur impedit molestias consequatur
-            voluptatem nulla!
-          </div>
+          <div className={styles.content_text}>{text}</div>
         </div>
       </div>
     </div>

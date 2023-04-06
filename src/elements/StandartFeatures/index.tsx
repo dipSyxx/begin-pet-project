@@ -3,6 +3,7 @@ import styles from './StandartFeatures.module.sass'
 import { Typography } from '../Typography'
 import { SubTitleLine } from '../SubTitleLine'
 import { CustomAccordion } from '../HardwareAccordion/HardwareAccordion'
+import { HardwareAccordionData, HardwareAccordionDataProps } from 'src/data/HardwareAccordion'
 
 export const StandartFeatures = () => {
   return (
@@ -15,11 +16,9 @@ export const StandartFeatures = () => {
           <SubTitleLine widthGreen={'w_40'} />
         </div>
         <div className={styles.Hardware}>
-          <CustomAccordion />
-          <CustomAccordion />
-          <CustomAccordion />
-          <CustomAccordion />
-          <CustomAccordion />
+          {HardwareAccordionData.map(({ id, title, title_text, text, icon }: HardwareAccordionDataProps) => (
+            <CustomAccordion key={id} title={title} title_text={title_text} text={text} icon={icon} />
+          ))}
         </div>
       </div>
     </div>
