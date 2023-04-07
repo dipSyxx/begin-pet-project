@@ -48,3 +48,54 @@
   font-size: 24px
   font-family: Metrophobic, sans-serif
   font-weight: 400
+
+.zozoSuit_line_block_tablet
+  display: none
+  flex-direction: row
+  align-items: center
+  gap: 50px
+
+.zozoSuit_line_tablet
+  width: 85%
+  height: 2px
+  background-color: #545454
+
+.zozoSuit_line_text_tablet
+  font-size: 24px
+  font-family: Metrophobic, sans-serif
+  font-weight: 400
+
+@media ( max-width: 910px )
+  .container
+    padding-left: 24px
+
+  .zozoSuit_inner
+    flex-direction: column
+
+  .zozoSuit_img
+    padding-left: 0
+    margin-bottom: 0px
+
+  .zozoSuit_line
+    width: 100%
+    margin: 50px 0
+
+  .zozoSuit_line_block_tablet
+    display: flex
+    flex-direction: column
+    gap: 0
+    padding: 0 25px
+
+  .zozoSuit_line_tablet
+    width: 200%
+
+  .zozoSuit_line_text_tablet
+    font-size: 40px
+    padding-left: 25px
+
+  .zozoSuit_line_text
+    display: none
+
+@media   ( max-width: 768px )
+  .zozoSuit
+    padding-bottom: 55px

@@ -11,6 +11,10 @@ export const ZozoSuit = () => {
             <div className={styles.zozoSuit_img}>
               <img src="/zozosuit/zozosuit.png" alt="zozosuit" />
             </div>
+            <div className={styles.zozoSuit_line_block_tablet}>
+              <div className={styles.zozoSuit_line_tablet} />
+              <h3 className={styles.zozoSuit_line_text_tablet}>ZOZOSUIT</h3>
+            </div>
           </div>
           <div className={styles.zozoSuit_item}>
             <div className={styles.zozoSuit_info}>
