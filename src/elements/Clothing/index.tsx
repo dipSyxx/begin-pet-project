@@ -6,7 +6,7 @@ import { Button } from '../Button'
 
 export const Clothing = () => {
   return (
-    <div className={styles.clothing}>
+    <div className={styles.clothing} id="specs">
       <div className={styles.container}>
         <div className={styles.clothing_inner}>
           <div className={styles.clothing_side}>

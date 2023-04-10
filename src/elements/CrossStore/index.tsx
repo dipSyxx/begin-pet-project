@@ -10,7 +10,7 @@ import { SliderPhotoProps } from 'src/data/SliderPhotoMassive'
 
 export const CrossStore = () => {
   return (
-    <div className={styles.crossStore}>
+    <div className={styles.crossStore} id="shopping">
       <div className={styles.container}>
         <div className={styles.crossStore_title}>
           <Typography component="h3" variant="h3" marginBottom="mb-36">

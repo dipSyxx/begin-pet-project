@@ -12,7 +12,7 @@ import Image from 'next/image'
 
 export const Introducing = () => {
   return (
-    <div className={styles.introducing_block}>
+    <div className={styles.introducing_block} id="about">
       <div className={styles.container}>
         <div className={styles.introducing_inner}>
           <div className={styles.introducing_item}>

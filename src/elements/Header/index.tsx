@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import styles from './HeaderStyles.module.sass'
-import Link from 'next/link'
 import { HeaderActions } from '../HeaderActions'
 import { HeaderLinks, HeaderLinksProps } from 'src/data/HeaderLinks'
 import { Button } from '../Button'
 import { BurgerMenu } from 'src/modules/BurgerMenu'
+import { Link } from 'react-scroll'
 
 export const Header = () => {
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false)
@@ -22,7 +22,9 @@ export const Header = () => {
             <ul className={styles.menu_links}>
               {HeaderLinks.map(({ id, name, href }: HeaderLinksProps) => (
                 <li key={id} className={styles.link_item}>
-                  <Link href={href}>{name}</Link>
+                  <Link activeClass={styles.activeLink} to={href} spy={true} smooth={true} offset={-150} duration={600}>
+                    {name}
+                  </Link>
                 </li>
               ))}
             </ul>

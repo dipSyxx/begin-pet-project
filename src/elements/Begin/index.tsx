@@ -6,7 +6,7 @@ import { SubTitleLine } from '../SubTitleLine'
 
 export const Begin = () => {
   return (
-    <div className={styles.begin}>
+    <div className={styles.begin} id="whyBegin">
       <div className={styles.container}>
         <div className={styles.begin_inner}>
           <div className={styles.begin_img}>

@@ -1,9 +1,9 @@
 import clsx from 'clsx'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './BurgerMenuStyles.module.sass'
 import { HeaderLinks, HeaderLinksProps } from 'src/data/HeaderLinks'
-import Link from 'next/link'
 import { Button } from 'src/elements/Button'
+import { Link } from 'react-scroll'
 import { Typography } from 'src/elements/Typography'
 
 type BurgerMenuProps = {
@@ -33,7 +33,17 @@ export const BurgerMenu = ({ openBurgerMenu, setOpenBurgerMenu }: BurgerMenuProp
           <ul className={styles.menu_links}>
             {HeaderLinks.map(({ id, name, href }: HeaderLinksProps) => (
               <li key={id} className={styles.link_item}>
-                <Link href={href}>{name}</Link>
+                <Link
+                  onClick={handleCloseBurgerMenu}
+                  activeClass={styles.activeLink}
+                  to={href}
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={600}
+                >
+                  {name}
+                </Link>
               </li>
             ))}
           </ul>

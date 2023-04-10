@@ -8,36 +8,36 @@ export const HeaderLinks: HeaderLinksProps[] = [
   {
     id: 2324,
     name: 'About',
-    href: '/',
+    href: 'about',
   },
 
   {
     id: 2523,
     name: 'Features',
-    href: '/',
+    href: 'features',
   },
 
   {
     id: 7658,
     name: 'Why begin',
-    href: '/',
+    href: 'whyBegin',
   },
 
   {
     id: 231,
     name: 'Specs',
-    href: '/',
+    href: 'specs',
   },
 
   {
     id: 645,
     name: 'Cross-Store Shopping',
-    href: '/',
+    href: 'shopping',
   },
 
   {
     id: 8543,
     name: 'Contact',
-    href: '/',
+    href: 'contact',
   },
 ]

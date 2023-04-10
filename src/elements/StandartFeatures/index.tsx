@@ -7,7 +7,7 @@ import { HardwareAccordionData, HardwareAccordionDataProps } from 'src/data/Hard
 
 export const StandartFeatures = () => {
   return (
-    <div className={styles.standartFeatures}>
+    <div className={styles.standartFeatures} id="features">
       <div className={styles.container}>
         <div className={styles.standartFeatures_title}>
           <Typography component="h3" variant="h3" marginBottom="mb-36">

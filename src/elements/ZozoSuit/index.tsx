@@ -4,7 +4,7 @@ import { Typography } from '../Typography'
 
 export const ZozoSuit = () => {
   return (
-    <div className={styles.zozoSuit}>
+    <div className={styles.zozoSuit} id="contact">
       <div className={styles.container}>
         <div className={styles.zozoSuit_inner}>
           <div className={styles.zozoSuit_item}>
