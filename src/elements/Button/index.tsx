@@ -1,12 +1,13 @@
 import clsx from 'clsx'
-import { createElement, FC, ReactNode } from 'react'
+import { createElement, FC, ReactNode, useContext } from 'react'
 
 import styles from './Button.module.sass'
+import { ThemeContext } from 'src/pages'
 
 type ButtonProps = {
   children: ReactNode
   component: 'button' | 'a'
-  variant: 'whiteButton' | 'withoutBg' | 'signUp' | 'whiteButtonWithBlack'
+  variant: 'whiteButton' | 'withoutBg' | 'signUp' | 'whiteButtonWithBlack' | 'withoutBgBlack' | 'blackButton'
   classNameStyles: string
   href?: string
   onClick?: () => void
@@ -24,6 +25,7 @@ export const Button: FC<ButtonProps> = ({
   disabled,
   onClick,
 }) => {
+  const { theme } = useContext(ThemeContext)
   return createElement(
     component,
     {

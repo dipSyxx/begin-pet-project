@@ -8,7 +8,7 @@ type TypographyProps = {
   component?: ElementType
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'subtitle1' | 'subtitle2'
   marginBottom?: 'mb-36' | 'mb-24' | 'mb-16' | 'mb-12' | 'mb-8' | 'mb-4'
-  colorVariant?: 'green' | 'gray' | 'lightGray'
+  colorVariant?: 'green' | 'gray' | 'lightGray' | 'black' | ''
 }
 
 export const Typography: FC<TypographyProps> = ({

@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './HowItStyles.module.sass'
 import { Typography } from '../Typography'
 import { SubTitleLine } from '../SubTitleLine'
 import { Button } from '../Button'
+import { ThemeContext } from 'src/pages'
+import clsx from 'clsx'
 
 export const UserCom = () => {
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <div className={styles.userCom}>
+    <div className={clsx(styles.userCom, theme ? styles.userCom_light : '')}>
       <div className={styles.container}>
         <div className={styles.userCom_title}>
           <Typography component="h3" variant="h3" marginBottom="mb-24">

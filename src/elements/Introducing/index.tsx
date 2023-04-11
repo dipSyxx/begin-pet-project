@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './IntroducingSyles.module.sass'
 import { Typography } from '../Typography'
 import { SubTitleLine } from '../SubTitleLine'
@@ -9,20 +9,22 @@ import { SwiperSlide } from 'swiper/react'
 import { SliderPhotoMassive, SliderPhotoProps } from 'src/data/SliderPhotoMassive'
 import Link from 'next/link'
 import Image from 'next/image'
+import { ThemeContext } from 'src/pages'
 
 export const Introducing = () => {
+  const { theme } = useContext(ThemeContext)
   return (
-    <div className={styles.introducing_block} id="about">
+    <div className={clsx(styles.introducing_block, theme ? styles.introducing_block_light : '')} id="about">
       <div className={styles.container}>
         <div className={styles.introducing_inner}>
           <div className={styles.introducing_item}>
             <div className={styles.introducing_title}>
-              <Typography variant="h3" colorVariant="green" marginBottom="mb-4">
+              <Typography variant="h3" colorVariant={theme ? 'black' : 'green'} marginBottom="mb-4">
                 Introducing
               </Typography>
-              <SubTitleLine widthGreen={'w_80'} widthGray={'w_50'} />
+              <SubTitleLine widthGreen="w_80" widthGray="w_50" />
             </div>
-            <div className={styles.introducing_text}>
+            <div className={clsx(styles.introducing_text, theme ? styles.introducing_text_light : '')}>
               The newly designed BEGIN will completely alter the reality of fashion, individually and commercially as we
               know it. A major attribute of this mirror is to provide the user with the resources of complex fashion and
               style that many find difficult to obtain. Its main focus will be the user’s stylistic preferences and will
@@ -34,8 +36,8 @@ export const Introducing = () => {
               dressing in all kinds of ways to fit certain descriptions, norms, and anything that will allow their
               confidence to break through the cracks of self-doubt.
             </div>
-            <div>
-              <Button component={'button'} variant={'whiteButton'} classNameStyles={''}>
+            <div style={{ display: 'inherit' }}>
+              <Button href="/" component="a" variant={theme ? 'blackButton' : 'whiteButton'} classNameStyles="button">
                 LEARN MORE
               </Button>
             </div>

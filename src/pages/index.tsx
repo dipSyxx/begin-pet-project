@@ -14,26 +14,42 @@ import { LearnMore } from 'src/elements/LearnMore'
 import { Nvidia } from 'src/elements/Nvidia'
 import { ZozoSuit } from 'src/elements/ZozoSuit'
 import { Footer } from 'src/elements/Footer'
+import { createContext, useState } from 'react'
+import clsx from 'clsx'
 
-export const Home = () => {
+type ThemeContextType = {
+  theme: boolean
+  themeSwitch?: () => void
+}
+
+export const ThemeContext = createContext<ThemeContextType>({ theme: false, themeSwitch: () => {} })
+
+export const Home: React.FC = () => {
+  const [theme, setTheme] = useState(false)
+
+  const themeSwitch = () => {
+    setTheme(!theme)
+  }
   return (
     <>
-      <div className={styles.wrapper}>
-        <Header />
-        <Intro />
-        <CompanyLogos />
-        <Introducing />
-        <Begin />
-        <Enhance />
-        <UserCom />
-        <Clothing />
-        <StandartFeatures />
-        <CrossStore />
-        <LearnMore />
-        <Nvidia />
-        <ZozoSuit />
-        <Footer />
-      </div>
+      <ThemeContext.Provider value={{ theme, themeSwitch }}>
+        <div className={clsx(styles.wrapper, theme ? styles.wrapper_light : '')}>
+          <Header />
+          <Intro />
+          <CompanyLogos />
+          <Introducing />
+          <Begin />
+          <Enhance />
+          <UserCom />
+          <Clothing />
+          <StandartFeatures />
+          <CrossStore />
+          <LearnMore />
+          <Nvidia />
+          <ZozoSuit />
+          <Footer />
+        </div>
+      </ThemeContext.Provider>
     </>
   )
 }

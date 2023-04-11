@@ -19,6 +19,11 @@
     transform: rotate(180deg)
     z-index: -1
 
+.header_light
+  background-color: #fff
+  &::before
+    border-bottom: 52px solid #f6f6f6a7
+
 .container
   position: relative
   width: 100%
@@ -44,6 +49,9 @@
     transform: rotate(180deg)
     z-index: -1
 
+.container_light::after
+  border-bottom: 30px solid #fff
+
 .menu_links
   display: flex
   flex-direction: row
@@ -55,8 +63,13 @@
   align-items: center
   transition: all 0.2s ease
   color: #fff
+  font-weight: 400
   &:hover
     color: #1EE1B3
+
+.link_item_light a
+  color: #08080C
+  font-weight: 700
 
 .link_item .activeLink
   transition: all 0.3s ease

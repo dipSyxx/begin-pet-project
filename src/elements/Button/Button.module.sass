@@ -23,10 +23,27 @@
     background-color: #08080C
     color: #fff
 
+.blackButton
+  background-color: #08080C
+  color: #fff
+  padding: 18px 40px
+  font-weight: 700
+  &:hover
+    background-color: #1EE1B3
+    color: #08080C
+
 .withoutBg
   color: #fff
   background: none
   font-family: Metrophobic, sans-serif
+  &:hover
+    color: #1EE1B3
+
+.withoutBgBlack
+  color: #08080C
+  background: none
+  font-family: Metrophobic, sans-serif
+  font-weight: 700
   &:hover
     color: #1EE1B3
 
@@ -54,3 +71,7 @@
   outline: none
   position: relative
   transition: all 0.3s ease
+
+  //! ColorVariant
+  .black
+    color: #08080C !important

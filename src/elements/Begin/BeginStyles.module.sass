@@ -1,4 +1,6 @@
 .begin
+  padding-top: 100px
+  transition: all 0.3s ease
 
 .container
   width: 100%
@@ -30,10 +32,11 @@
     transform: rotate(60deg)
     left: 0%
     bottom: 0
-    z-index: -1
+    z-index: 1
   & img
     max-width: 300px
     width: 100%
+    z-index: 2
 
 .begin_block
   display: flex
@@ -60,6 +63,9 @@
   background-color: #fff
   padding: 15px
   border-radius: 50%
+
+.begin_content_icon_light img
+  background-color: #1EE1B3
 
 .begin_content
   display: flex
