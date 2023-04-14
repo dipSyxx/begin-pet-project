@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './LearnMoreStyles.module.sass'
 import { Button } from '../Button'
 import { Typography } from '../Typography'
 import clsx from 'clsx'
+import { ThemeContext } from 'src/pages'
 
 export const LearnMore = () => {
+  const { theme } = useContext(ThemeContext)
+
   return (
     <div className={styles.learnMore}>
       <div className={styles.container}>
@@ -19,7 +22,7 @@ export const LearnMore = () => {
           </div>
           <div className={styles.learnMore_item}>
             <div className={styles.learnMore_info}>
-              <Typography component="p" variant="subtitle2">
+              <Typography component="p" variant="subtitle2" colorVariant={theme ? 'black' : ''}>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
                 laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
                 ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
@@ -29,7 +32,7 @@ export const LearnMore = () => {
               </Typography>
             </div>
             <div className={styles.learnMore_btn}>
-              <Button component="button" variant="whiteButton" classNameStyles="button">
+              <Button component="button" variant={theme ? 'blackButton' : 'whiteButton'} classNameStyles="button">
                 LEARN MORE
               </Button>
             </div>

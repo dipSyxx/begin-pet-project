@@ -1,8 +1,9 @@
 import { Typography } from '../Typography'
 import clsx from 'clsx'
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode, useContext, useState } from 'react'
 
 import styles from './HadwareAccordion.module.sass'
+import { ThemeContext } from 'src/pages'
 
 type CustomAccordionProps = {
   title: string
@@ -18,18 +19,14 @@ export const CustomAccordion = ({ title, title_text, text, icon }: CustomAccordi
     setOpenAccordion(!openAccordion)
   }
 
+  const { theme } = useContext(ThemeContext)
+
   return (
     <div className={styles.hardwareAccordion}>
       <div className={styles.hardwareAccordion_heading}>
-        {openAccordion ? (
-          <Typography component="h3" variant="h3" colorVariant="lightGray">
-            {title}
-          </Typography>
-        ) : (
-          <Typography component="h3" variant="h3" colorVariant="gray">
-            {title}
-          </Typography>
-        )}
+        <Typography component="h3" variant="h3" colorVariant={openAccordion ? 'lightGray' : 'gray'}>
+          {title}
+        </Typography>
 
         <button className={styles.accordion_icon} onClick={toggleHendler}>
           <i
@@ -40,7 +37,7 @@ export const CustomAccordion = ({ title, title_text, text, icon }: CustomAccordi
       </div>
       <div aria-expanded={!openAccordion} className={styles.hardwareAccordion_content}>
         <div className={styles.content_container}>
-          <div className={styles.content_title}>
+          <div className={clsx(styles.content_title, theme ? styles.title_content_light : '')}>
             <div className={styles.title_icon}>
               <i className={`fa-solid ${icon}`} />
             </div>

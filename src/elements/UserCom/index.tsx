@@ -65,7 +65,7 @@ export const UserCom = () => {
           </li>
         </ul>
         <div className={styles.userCom_button}>
-          <Button component="button" variant="whiteButton" classNameStyles="button">
+          <Button component="button" variant={theme ? 'blackButton' : 'whiteButton'} classNameStyles="button">
             LEARN MORE
           </Button>
         </div>

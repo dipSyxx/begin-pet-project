@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './CrossStore.module.sass'
 import { Typography } from '../Typography'
 import { SubTitleLine } from '../SubTitleLine'
@@ -6,14 +6,16 @@ import { CrossStoreSlider } from './CrossStoreSlider'
 import { SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
 import { SliderBrend } from 'src/data/SliderBrend'
-import { SliderPhotoProps } from 'src/data/SliderPhotoMassive'
+import { ThemeContext } from 'src/pages'
 
 export const CrossStore = () => {
+  const { theme } = useContext(ThemeContext)
+
   return (
     <div className={styles.crossStore} id="shopping">
       <div className={styles.container}>
         <div className={styles.crossStore_title}>
-          <Typography component="h3" variant="h3" marginBottom="mb-36">
+          <Typography component="h3" variant="h3" marginBottom="mb-36" colorVariant={theme ? 'black' : ''}>
             Cross store shopping in real time and cloth simulation on your own character!
           </Typography>
           <SubTitleLine widthGreen={'w_40'} />

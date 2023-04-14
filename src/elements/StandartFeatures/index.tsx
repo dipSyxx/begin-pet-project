@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './StandartFeatures.module.sass'
 import { Typography } from '../Typography'
 import { SubTitleLine } from '../SubTitleLine'
 import { CustomAccordion } from '../HardwareAccordion/HardwareAccordion'
 import { HardwareAccordionData, HardwareAccordionDataProps } from 'src/data/HardwareAccordion'
+import { ThemeContext } from 'src/pages'
 
 export const StandartFeatures = () => {
+  const { theme } = useContext(ThemeContext)
   return (
     <div className={styles.standartFeatures} id="features">
       <div className={styles.container}>
         <div className={styles.standartFeatures_title}>
-          <Typography component="h3" variant="h3" marginBottom="mb-36">
+          <Typography component="h3" variant="h3" marginBottom="mb-36" colorVariant={theme ? 'black' : ''}>
             Standart Features
           </Typography>
           <SubTitleLine widthGreen={'w_40'} />

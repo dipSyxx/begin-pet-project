@@ -7,7 +7,7 @@ import { ThemeContext } from 'src/pages'
 type ButtonProps = {
   children: ReactNode
   component: 'button' | 'a'
-  variant: 'whiteButton' | 'withoutBg' | 'signUp' | 'whiteButtonWithBlack' | 'withoutBgBlack' | 'blackButton'
+  variant: 'whiteButton' | 'withoutBg' | 'signUp' | 'whiteButtonWithBlack' | 'withoutBgBlack' | 'blackButton' | 'blackX'
   classNameStyles: string
   href?: string
   onClick?: () => void
