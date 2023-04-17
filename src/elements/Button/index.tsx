@@ -12,7 +12,7 @@ type ButtonProps = {
   variant: 'whiteButton' | 'withoutBg' | 'signUp' | 'whiteButtonWithBlack' | 'withoutBgBlack' | 'blackButton' | 'blackX'
   classNameStyles: string
   href?: string
-  onClick?: () => void
+  onClick?: (e: React.MouseEvent) => void
   type?: 'submit' | 'button'
   disabled?: boolean
 }

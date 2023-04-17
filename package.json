@@ -19,6 +19,7 @@
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-parallax-mouse": "^2.0.1",
     "react-scroll": "^1.8.9",
     "sass": "^1.59.2",
