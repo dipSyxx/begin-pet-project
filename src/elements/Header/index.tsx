@@ -9,19 +9,36 @@ import { ThemeContext } from 'src/pages'
 import clsx from 'clsx'
 
 export const Header = () => {
+  const [scroll, setScroll] = useState(0)
+
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false)
 
   const handleOpenBurgerMenu = () => {
     setOpenBurgerMenu(true)
   }
 
+  const handleScroll = () => {
+    setScroll(window.scrollY)
+  }
+
   const { theme } = useContext(ThemeContext)
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <>
       <BurgerMenu openBurgerMenu={openBurgerMenu} setOpenBurgerMenu={setOpenBurgerMenu} />
       <header className={clsx(styles.header, theme ? styles.header_light : '')}>
-        <div className={clsx(styles.container, theme ? styles.container_light : '')}>
+        <div
+          className={clsx(
+            styles.container,
+            theme ? styles.container_light : '',
+            scroll > 50 ? '' : styles.fullContainer,
+          )}
+        >
           <nav className={styles.nav_menu}>
             <ul className={styles.menu_links}>
               {HeaderLinks.map(({ id, name, href }: HeaderLinksProps) => (

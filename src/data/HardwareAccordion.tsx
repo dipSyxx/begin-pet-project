@@ -4,6 +4,7 @@ export type HardwareAccordionDataProps = {
   title_text: string
   text: string
   icon: string
+  index: number
 }
 
 export const HardwareAccordionData: HardwareAccordionDataProps[] = [
@@ -13,6 +14,7 @@ export const HardwareAccordionData: HardwareAccordionDataProps[] = [
     title_text: 'Lorem',
     text: 'Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit ame Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit ame',
     icon: 'fa-microchip',
+    index: 1,
   },
 
   {
@@ -21,6 +23,7 @@ export const HardwareAccordionData: HardwareAccordionDataProps[] = [
     title_text: 'Lorem',
     text: 'Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit ame Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit ame',
     icon: 'fa-microchip',
+    index: 1.5,
   },
   {
     id: 3452,
@@ -28,6 +31,7 @@ export const HardwareAccordionData: HardwareAccordionDataProps[] = [
     title_text: '',
     text: 'Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit ame Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit ame',
     icon: 'fa-microchip',
+    index: 2,
   },
   {
     id: 8469,
@@ -35,5 +39,6 @@ export const HardwareAccordionData: HardwareAccordionDataProps[] = [
     title_text: 'Lorem',
     text: 'Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit ame Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit ame',
     icon: 'fa-microchip',
+    index: 2.5,
   },
 ]

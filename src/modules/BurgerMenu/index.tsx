@@ -6,6 +6,7 @@ import { Button } from 'src/elements/Button'
 import { Link } from 'react-scroll'
 import { Typography } from 'src/elements/Typography'
 import { ThemeContext } from 'src/pages'
+import { motion } from 'framer-motion'
 
 type BurgerMenuProps = {
   openBurgerMenu: boolean
@@ -18,6 +19,19 @@ export const BurgerMenu = ({ openBurgerMenu, setOpenBurgerMenu }: BurgerMenuProp
   const handleCloseBurgerMenu = () => {
     setOpenBurgerMenu(false)
   }
+
+  const linkAnimations = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: (custom: number) => ({
+      x: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.3 },
+    }),
+  }
+
   return (
     <>
       <div
@@ -25,7 +39,9 @@ export const BurgerMenu = ({ openBurgerMenu, setOpenBurgerMenu }: BurgerMenuProp
         onClick={handleCloseBurgerMenu}
       ></div>
 
-      <div
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
         className={clsx(
           styles.burger_window,
           openBurgerMenu ? styles.burger_window_show : '',
@@ -45,8 +61,13 @@ export const BurgerMenu = ({ openBurgerMenu, setOpenBurgerMenu }: BurgerMenuProp
         <h1 className={clsx(styles.burger_title, theme ? styles.burger_title_light : '')}>Menu</h1>
         <nav className={styles.nav_menu}>
           <ul className={styles.menu_links}>
-            {HeaderLinks.map(({ id, name, href }: HeaderLinksProps) => (
-              <li key={id} className={clsx(styles.link_item, theme ? styles.link_item_light : '')}>
+            {HeaderLinks.map(({ id, name, href, index }: HeaderLinksProps) => (
+              <motion.li
+                variants={linkAnimations}
+                custom={index}
+                key={id}
+                className={clsx(styles.link_item, theme ? styles.link_item_light : '')}
+              >
                 <Link
                   onClick={handleCloseBurgerMenu}
                   activeClass={styles.activeLink}
@@ -58,11 +79,11 @@ export const BurgerMenu = ({ openBurgerMenu, setOpenBurgerMenu }: BurgerMenuProp
                 >
                   {name}
                 </Link>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </nav>
-      </div>
+      </motion.div>
     </>
   )
 }

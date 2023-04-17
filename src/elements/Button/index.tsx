@@ -1,8 +1,10 @@
+/* eslint-disable react/display-name */
 import clsx from 'clsx'
-import { createElement, FC, ReactNode, useContext } from 'react'
+import { createElement, FC, forwardRef, ReactNode, useContext } from 'react'
 
 import styles from './Button.module.sass'
 import { ThemeContext } from 'src/pages'
+import { motion } from 'framer-motion'
 
 type ButtonProps = {
   children: ReactNode
@@ -15,26 +17,25 @@ type ButtonProps = {
   disabled?: boolean
 }
 
-export const Button: FC<ButtonProps> = ({
-  children,
-  component,
-  variant = 'whiteButton',
-  classNameStyles,
-  href,
-  type = 'button',
-  disabled,
-  onClick,
-}) => {
-  const { theme } = useContext(ThemeContext)
-  return createElement(
-    component,
-    {
-      onClick,
-      href,
-      type,
-      disabled,
-      className: clsx(styles.button, styles[classNameStyles], styles[variant]),
-    },
-    children,
-  )
-}
+export const Button: FC<ButtonProps> = forwardRef(
+  (
+    { children, component, variant = 'whiteButton', classNameStyles, href, type = 'button', disabled, onClick },
+    ref,
+  ) => {
+    const { theme } = useContext(ThemeContext)
+    return createElement(
+      component,
+      {
+        ref,
+        onClick,
+        href,
+        type,
+        disabled,
+        className: clsx(styles.button, styles[classNameStyles], styles[variant]),
+      },
+      children,
+    )
+  },
+)
+
+export const MButton = motion(Button)

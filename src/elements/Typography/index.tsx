@@ -1,5 +1,8 @@
+/* eslint-disable react/display-name */
+import { forwardRef } from 'react'
 import clsx from 'clsx'
 import { createElement, ElementType, FC, ReactNode } from 'react'
+import { motion } from 'framer-motion'
 
 import styles from './typographyStyles.module.sass'
 
@@ -11,18 +14,17 @@ type TypographyProps = {
   colorVariant?: 'green' | 'gray' | 'lightGray' | 'black' | ''
 }
 
-export const Typography: FC<TypographyProps> = ({
-  children,
-  component = 'h1',
-  variant = 'h1',
-  marginBottom = '',
-  colorVariant = '',
-}) => {
-  return createElement(
-    component,
-    {
-      className: clsx(styles.typography, styles[variant], styles[marginBottom], styles[colorVariant]),
-    },
-    children,
-  )
-}
+export const Typography: FC<TypographyProps> = forwardRef(
+  ({ children, component = 'h1', variant = 'h1', marginBottom = '', colorVariant = '' }, ref) => {
+    return createElement(
+      component,
+      {
+        ref,
+        className: clsx(styles.typography, styles[variant], styles[marginBottom], styles[colorVariant]),
+      },
+      children,
+    )
+  },
+)
+
+export const MTypography = motion(Typography)

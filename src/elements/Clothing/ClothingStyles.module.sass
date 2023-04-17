@@ -1,7 +1,11 @@
 .clothing
   padding: 0 24px
   padding-top: 79px
-  padding-bottom: 200px
+  padding-bottom: 90px
+  transition: all 0.3s ease
+
+.clothing_light
+  background-color: #EFEDED
 
 .container
   position: relative
@@ -34,6 +38,9 @@
   left: 60%
 
 .clothing_img img
+  display: block
+  object-fit: cover
+  object-position: center
   max-width: 100%
   width: 100%
 
@@ -77,10 +84,10 @@
     max-width: none
     width: auto
 
-@media ( max-width: 725px )
+@media ( max-width: 726px )
   .clothing_img
     position: absolute
-    top: 0%
+    top: -14%
     left: 15%
 
   .clothing_img img

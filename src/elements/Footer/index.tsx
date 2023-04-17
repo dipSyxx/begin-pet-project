@@ -11,7 +11,9 @@ export const Footer = () => {
             <div className={styles.logo_triangle}>
               <i className="fa-solid fa-play" />
             </div>
-            <div className={styles.logo_title}>BEGIN</div>
+            <Link href="/" className={styles.logo_title}>
+              BEGIN
+            </Link>
           </div>
           <ul className={styles.footer_socials}>
             <li className={styles.footer_social}>
