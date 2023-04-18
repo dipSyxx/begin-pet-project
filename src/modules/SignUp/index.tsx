@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Button } from 'src/elements/Button'
 import { ThemeContext } from 'src/pages'
+import { Login } from '../Login'
 
 interface IFormsValid {
   email: string
@@ -11,11 +12,13 @@ interface IFormsValid {
 }
 
 type ModalWindowProps = {
+  sign: boolean
+  setSign: (isSign: boolean) => void
   login: boolean
   setLogin: (isLogin: boolean) => void
 }
 
-export const Login = ({ login, setLogin }: ModalWindowProps) => {
+export const SignUp = ({ sign, setSign, login, setLogin }: ModalWindowProps) => {
   const [type, setType] = useState('password')
   const [icon, setIcon] = useState('eye-slash')
 
@@ -47,25 +50,27 @@ export const Login = ({ login, setLogin }: ModalWindowProps) => {
   }
 
   const handleCloseModalWindow = () => {
-    setLogin(false)
+    setSign(false)
   }
 
   const handleOpenRemindeWindow = (e: React.MouseEvent) => {
     e.preventDefault()
-    setLogin(false)
+    setSign(false)
   }
-  const handleOpenRegestrationWindow = (e: React.MouseEvent) => {
+  const handleOpenLoginWindow = (e: React.MouseEvent) => {
     e.preventDefault()
-    setLogin(false)
+    setSign(false)
+    setLogin(true)
   }
 
   return (
     <>
-      <div className={clsx('modal_holder', login ? 'show_holder' : '')} onClick={handleCloseModalWindow}></div>
-      <div className={clsx('modal_window', login ? 'show_window' : '', theme ? 'modal_window_light' : '')}>
+      <Login login={login} setLogin={setLogin} />
+      <div className={clsx('modal_holder', sign ? 'show_holder' : '')} onClick={handleCloseModalWindow}></div>
+      <div className={clsx('modal_window', sign ? 'show_window' : '', theme ? 'modal_window_light' : '')}>
         <div className="modal_header">
           <Typography colorVariant={theme ? 'black' : ''} component="h3" variant="h3">
-            Login
+            Sign Up
           </Typography>
           <Button
             onClick={handleCloseModalWindow}
@@ -160,6 +165,14 @@ export const Login = ({ login, setLogin }: ModalWindowProps) => {
                     disabled={!isValid}
                     component="button"
                     variant={theme ? 'blackButton' : 'whiteButton'}
+                    classNameStyles="button"
+                  >
+                    Sign Up
+                  </Button>
+                  <Button
+                    onClick={handleOpenLoginWindow}
+                    component="button"
+                    variant={theme ? 'blackX' : 'withoutBg'}
                     classNameStyles="button"
                   >
                     Login

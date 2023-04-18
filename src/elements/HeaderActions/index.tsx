@@ -4,19 +4,26 @@ import clsx from 'clsx'
 import { Button } from '../Button'
 import { ThemeContext } from 'src/pages'
 import { Login } from 'src/modules/Login'
+import { SignUp } from 'src/modules/SignUp'
 
 export const HeaderActions = () => {
   const { theme, themeSwitch } = useContext(ThemeContext)
 
   const [login, setLogin] = useState(false)
+  const [sign, setSign] = useState(false)
 
   const handleOpenLoginWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setLogin(true)
   }
+  const handleOpenSignUpWindow = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setSign(true)
+  }
   return (
     <>
       <Login login={login} setLogin={setLogin} />
+      <SignUp sign={sign} setSign={setSign} login={login} setLogin={setLogin} />
       <div className={styles.header_actions}>
         <div className={styles.header_toggle}>
           <div onClick={themeSwitch} className={clsx(styles.toggle)}>
@@ -33,7 +40,7 @@ export const HeaderActions = () => {
         >
           LogIn
         </Button>
-        <Button component="button" variant="signUp" classNameStyles="button">
+        <Button onClick={handleOpenSignUpWindow} component="button" variant="signUp" classNameStyles="button">
           SIGN UP
         </Button>
       </div>
