@@ -3,8 +3,8 @@ import styles from './HeaderActions.module.sass'
 import clsx from 'clsx'
 import { Button } from '../Button'
 import { ThemeContext } from 'src/pages'
-import { Login } from 'src/modules/Login'
-import { SignUp } from 'src/modules/SignUp'
+import { Login } from '@modules/Login'
+import { SignUp } from '@modules/SignUp'
 
 export const HeaderActions = () => {
   const { theme, themeSwitch } = useContext(ThemeContext)
