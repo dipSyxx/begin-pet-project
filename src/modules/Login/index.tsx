@@ -161,6 +161,7 @@ export const Login = ({ login, setLogin }: ModalWindowProps) => {
                     component="button"
                     variant={theme ? 'blackButton' : 'whiteButton'}
                     classNameStyles="button"
+                    type="submit"
                   >
                     Login
                   </Button>

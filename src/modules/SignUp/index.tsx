@@ -174,6 +174,7 @@ export const SignUp = ({ sign, setSign, login, setLogin }: ModalWindowProps) => 
                     component="button"
                     variant={theme ? 'blackX' : 'withoutBg'}
                     classNameStyles="button"
+                    type="submit"
                   >
                     Login
                   </Button>
